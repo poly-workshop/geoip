@@ -1,0 +1,3 @@
+{
+    "postCreateCommand": "${containerWorkspaceFolder}/scripts/setup.sh"
+}

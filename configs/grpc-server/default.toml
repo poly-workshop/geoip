@@ -1,0 +1,10 @@
+port = 50051
+
+[geoip2.databases]
+city = "data/GeoLite2-City.mmdb"
+country = "data/GeoLite2-Country.mmdb"
+asn = "data/GeoLite2-ASN.mmdb"
+
+[rate_limit]
+per_minute = 10
+burst = 10

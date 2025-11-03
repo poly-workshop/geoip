@@ -1,0 +1,873 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "geoip/v1/service.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "GeoIPService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/geoip/anonymous-ip/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetAnonymousIp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAnonymousIpResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/asn/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetAsn",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAsnResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/city/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetCity",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCityResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/connection-type/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetConnectionType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetConnectionTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/country/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetCountry",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCountryResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/domain/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetDomain",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDomainResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/enterprise/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetEnterprise",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEnterpriseResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/isp/{ipAddress}": {
+      "get": {
+        "operationId": "GeoIPService_GetIsp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetIspResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    },
+    "/v1/geoip/myip": {
+      "get": {
+        "operationId": "GeoIPService_GetMyIp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMyIpResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "GeoIPService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "geoipv1Location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "timeZone": {
+          "type": "string"
+        },
+        "metroCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "accuracyRadius": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AnonymousIp": {
+      "type": "object",
+      "properties": {
+        "ipAddress": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        },
+        "isAnonymous": {
+          "type": "boolean"
+        },
+        "isAnonymousVpn": {
+          "type": "boolean"
+        },
+        "isHostingProvider": {
+          "type": "boolean"
+        },
+        "isPublicProxy": {
+          "type": "boolean"
+        },
+        "isResidentialProxy": {
+          "type": "boolean"
+        },
+        "isTorExitNode": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Asn": {
+      "type": "object",
+      "properties": {
+        "ipAddress": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        },
+        "autonomousSystemNumber": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "autonomousSystemOrganization": {
+          "type": "string"
+        }
+      }
+    },
+    "v1City": {
+      "type": "object",
+      "properties": {
+        "cityRecord": {
+          "$ref": "#/definitions/v1CityRecord"
+        },
+        "continent": {
+          "$ref": "#/definitions/v1Continent"
+        },
+        "country": {
+          "$ref": "#/definitions/v1CountryRecord"
+        },
+        "registeredCountry": {
+          "$ref": "#/definitions/v1CountryRecord"
+        },
+        "representedCountry": {
+          "$ref": "#/definitions/v1RepresentedCountry"
+        },
+        "location": {
+          "$ref": "#/definitions/geoipv1Location"
+        },
+        "postal": {
+          "$ref": "#/definitions/v1CityPostal"
+        },
+        "subdivisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CitySubdivision"
+          }
+        },
+        "traits": {
+          "$ref": "#/definitions/v1CityTraits"
+        }
+      }
+    },
+    "v1CityPostal": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CityRecord": {
+      "type": "object",
+      "properties": {
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        }
+      }
+    },
+    "v1CitySubdivision": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "v1CityTraits": {
+      "type": "object",
+      "properties": {
+        "isAnycast": {
+          "type": "boolean"
+        },
+        "ipAddress": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ConnectionType": {
+      "type": "object",
+      "properties": {
+        "connectionType": {
+          "type": "string"
+        },
+        "ipAddress": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Continent": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        },
+        "code": {
+          "type": "string"
+        },
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "v1Country": {
+      "type": "object",
+      "properties": {
+        "continent": {
+          "$ref": "#/definitions/v1Continent"
+        },
+        "country": {
+          "$ref": "#/definitions/v1CountryRecord"
+        },
+        "registeredCountry": {
+          "$ref": "#/definitions/v1CountryRecord"
+        },
+        "representedCountry": {
+          "$ref": "#/definitions/v1RepresentedCountry"
+        },
+        "traits": {
+          "$ref": "#/definitions/v1CountryTraits"
+        }
+      }
+    },
+    "v1CountryRecord": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "isInEuropeanUnion": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CountryTraits": {
+      "type": "object",
+      "properties": {
+        "isAnycast": {
+          "type": "boolean"
+        },
+        "ipAddress": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Domain": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "ipAddress": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Enterprise": {
+      "type": "object",
+      "properties": {
+        "continent": {
+          "$ref": "#/definitions/v1Continent"
+        },
+        "subdivisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1EnterpriseSubdivision"
+          }
+        },
+        "postal": {
+          "$ref": "#/definitions/v1EnterprisePostal"
+        },
+        "representedCountry": {
+          "$ref": "#/definitions/v1RepresentedCountry"
+        },
+        "country": {
+          "$ref": "#/definitions/v1EnterpriseCountryRecord"
+        },
+        "registeredCountry": {
+          "$ref": "#/definitions/v1CountryRecord"
+        },
+        "city": {
+          "$ref": "#/definitions/v1EnterpriseCityRecord"
+        },
+        "location": {
+          "$ref": "#/definitions/geoipv1Location"
+        },
+        "traits": {
+          "$ref": "#/definitions/v1EnterpriseTraits"
+        }
+      }
+    },
+    "v1EnterpriseCityRecord": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        },
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "confidence": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1EnterpriseCountryRecord": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "confidence": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isInEuropeanUnion": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1EnterprisePostal": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1EnterpriseSubdivision": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "confidence": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1EnterpriseTraits": {
+      "type": "object",
+      "properties": {
+        "network": {
+          "type": "string"
+        },
+        "ipAddress": {
+          "type": "string"
+        },
+        "autonomousSystemOrganization": {
+          "type": "string"
+        },
+        "connectionType": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "isp": {
+          "type": "string"
+        },
+        "mobileCountryCode": {
+          "type": "string"
+        },
+        "mobileNetworkCode": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "userType": {
+          "type": "string"
+        },
+        "staticIpScore": {
+          "type": "number",
+          "format": "double"
+        },
+        "autonomousSystemNumber": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "isAnycast": {
+          "type": "boolean"
+        },
+        "isLegitimateProxy": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAnonymousIpResponse": {
+      "type": "object",
+      "properties": {
+        "anonymousIp": {
+          "$ref": "#/definitions/v1AnonymousIp"
+        }
+      }
+    },
+    "v1GetAsnResponse": {
+      "type": "object",
+      "properties": {
+        "asn": {
+          "$ref": "#/definitions/v1Asn"
+        }
+      }
+    },
+    "v1GetCityResponse": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "$ref": "#/definitions/v1City"
+        }
+      }
+    },
+    "v1GetConnectionTypeResponse": {
+      "type": "object",
+      "properties": {
+        "connectionType": {
+          "$ref": "#/definitions/v1ConnectionType"
+        }
+      }
+    },
+    "v1GetCountryResponse": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1Country"
+        }
+      }
+    },
+    "v1GetDomainResponse": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "$ref": "#/definitions/v1Domain"
+        }
+      }
+    },
+    "v1GetEnterpriseResponse": {
+      "type": "object",
+      "properties": {
+        "enterprise": {
+          "$ref": "#/definitions/v1Enterprise"
+        }
+      }
+    },
+    "v1GetIspResponse": {
+      "type": "object",
+      "properties": {
+        "isp": {
+          "$ref": "#/definitions/v1Isp"
+        }
+      }
+    },
+    "v1GetMyIpResponse": {
+      "type": "object",
+      "properties": {
+        "ipAddress": {
+          "type": "string"
+        },
+        "detectedFrom": {
+          "type": "string",
+          "title": "Source of IP detection (e.g., \"remote_addr\", \"x-forwarded-for\", \"x-real-ip\")"
+        }
+      }
+    },
+    "v1Isp": {
+      "type": "object",
+      "properties": {
+        "network": {
+          "type": "string"
+        },
+        "ipAddress": {
+          "type": "string"
+        },
+        "autonomousSystemOrganization": {
+          "type": "string"
+        },
+        "isp": {
+          "type": "string"
+        },
+        "mobileCountryCode": {
+          "type": "string"
+        },
+        "mobileNetworkCode": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "autonomousSystemNumber": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "v1Names": {
+      "type": "object",
+      "properties": {
+        "de": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        },
+        "es": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "ja": {
+          "type": "string"
+        },
+        "ptBr": {
+          "type": "string"
+        },
+        "ru": {
+          "type": "string"
+        },
+        "zhCn": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RepresentedCountry": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/v1Names"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "geonameId": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "isInEuropeanUnion": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

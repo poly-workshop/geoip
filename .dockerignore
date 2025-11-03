@@ -1,0 +1,19 @@
+# Prevent unnecessary files from being sent to the Docker build context
+.git
+.gitmodules
+.gitignore
+node_modules
+website/node_modules
+website/dist
+website/.next
+website/.turbo
+website/.cache
+website/tmp
+website/logs
+pnpm-debug.log
+npm-debug.log
+yarn-error.log
+.vscode
+coverage
+tmp
+.DS_Store

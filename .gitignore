@@ -1,0 +1,6 @@
+__debug_bin**
+
+data/
+test/data/
+
+node_modules/

@@ -1,0 +1,292 @@
+syntax = "proto3";
+
+package geoip.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/wrappers.proto";
+
+option go_package = "github.com/poly-workshop/geoip/gen/go/geoip/v1;geoip_v1_pb";
+
+service GeoIPService {
+  rpc GetMyIp(GetMyIpRequest) returns (GetMyIpResponse) {
+    option (google.api.http) = {get: "/v1/geoip/myip"};
+  }
+  rpc GetCity(GetCityRequest) returns (GetCityResponse) {
+    option (google.api.http) = {get: "/v1/geoip/city/{ip_address}"};
+  }
+  rpc GetCountry(GetCountryRequest) returns (GetCountryResponse) {
+    option (google.api.http) = {get: "/v1/geoip/country/{ip_address}"};
+  }
+  rpc GetEnterprise(GetEnterpriseRequest) returns (GetEnterpriseResponse) {
+    option (google.api.http) = {get: "/v1/geoip/enterprise/{ip_address}"};
+  }
+  rpc GetAnonymousIp(GetAnonymousIpRequest) returns (GetAnonymousIpResponse) {
+    option (google.api.http) = {get: "/v1/geoip/anonymous-ip/{ip_address}"};
+  }
+  rpc GetAsn(GetAsnRequest) returns (GetAsnResponse) {
+    option (google.api.http) = {get: "/v1/geoip/asn/{ip_address}"};
+  }
+  rpc GetConnectionType(GetConnectionTypeRequest) returns (GetConnectionTypeResponse) {
+    option (google.api.http) = {get: "/v1/geoip/connection-type/{ip_address}"};
+  }
+  rpc GetDomain(GetDomainRequest) returns (GetDomainResponse) {
+    option (google.api.http) = {get: "/v1/geoip/domain/{ip_address}"};
+  }
+  rpc GetIsp(GetIspRequest) returns (GetIspResponse) {
+    option (google.api.http) = {get: "/v1/geoip/isp/{ip_address}"};
+  }
+}
+
+message GetMyIpRequest {}
+
+message GetMyIpResponse {
+  string ip_address = 1;
+  string detected_from = 2; // Source of IP detection (e.g., "remote_addr", "x-forwarded-for", "x-real-ip")
+}
+
+message GetCityRequest {
+  string ip_address = 1;
+}
+
+message GetCityResponse {
+  City city = 1;
+}
+
+message GetCountryRequest {
+  string ip_address = 1;
+}
+
+message GetCountryResponse {
+  Country country = 1;
+}
+
+message GetEnterpriseRequest {
+  string ip_address = 1;
+}
+
+message GetEnterpriseResponse {
+  Enterprise enterprise = 1;
+}
+
+message GetAnonymousIpRequest {
+  string ip_address = 1;
+}
+
+message GetAnonymousIpResponse {
+  AnonymousIp anonymous_ip = 1;
+}
+
+message GetAsnRequest {
+  string ip_address = 1;
+}
+
+message GetAsnResponse {
+  Asn asn = 1;
+}
+
+message GetConnectionTypeRequest {
+  string ip_address = 1;
+}
+
+message GetConnectionTypeResponse {
+  ConnectionType connection_type = 1;
+}
+
+message GetDomainRequest {
+  string ip_address = 1;
+}
+
+message GetDomainResponse {
+  Domain domain = 1;
+}
+
+message GetIspRequest {
+  string ip_address = 1;
+}
+
+message GetIspResponse {
+  Isp isp = 1;
+}
+
+message City {
+  CityRecord city_record = 1;
+  Continent continent = 2;
+  CountryRecord country = 3;
+  CountryRecord registered_country = 4;
+  RepresentedCountry represented_country = 5;
+  Location location = 6;
+  CityPostal postal = 7;
+  repeated CitySubdivision subdivisions = 8;
+  CityTraits traits = 9;
+}
+
+message Country {
+  Continent continent = 1;
+  CountryRecord country = 2;
+  CountryRecord registered_country = 3;
+  RepresentedCountry represented_country = 4;
+  CountryTraits traits = 5;
+}
+
+message Enterprise {
+  Continent continent = 1;
+  repeated EnterpriseSubdivision subdivisions = 2;
+  EnterprisePostal postal = 3;
+  RepresentedCountry represented_country = 4;
+  EnterpriseCountryRecord country = 5;
+  CountryRecord registered_country = 6;
+  EnterpriseCityRecord city = 7;
+  Location location = 8;
+  EnterpriseTraits traits = 9;
+}
+
+message AnonymousIp {
+  string ip_address = 1;
+  string network = 2;
+  bool is_anonymous = 3;
+  bool is_anonymous_vpn = 4;
+  bool is_hosting_provider = 5;
+  bool is_public_proxy = 6;
+  bool is_residential_proxy = 7;
+  bool is_tor_exit_node = 8;
+}
+
+message Asn {
+  string ip_address = 1;
+  string network = 2;
+  uint64 autonomous_system_number = 3;
+  string autonomous_system_organization = 4;
+}
+
+message ConnectionType {
+  string connection_type = 1;
+  string ip_address = 2;
+  string network = 3;
+}
+
+message Domain {
+  string domain = 1;
+  string ip_address = 2;
+  string network = 3;
+}
+
+message Isp {
+  string network = 1;
+  string ip_address = 2;
+  string autonomous_system_organization = 3;
+  string isp = 4;
+  string mobile_country_code = 5;
+  string mobile_network_code = 6;
+  string organization = 7;
+  uint64 autonomous_system_number = 8;
+}
+
+message CityRecord {
+  uint64 geoname_id = 1;
+  Names names = 2;
+}
+
+message Continent {
+  Names names = 1;
+  string code = 2;
+  uint64 geoname_id = 3;
+}
+
+message CountryRecord {
+  Names names = 1;
+  string iso_code = 2;
+  uint64 geoname_id = 3;
+  bool is_in_european_union = 4;
+}
+
+message RepresentedCountry {
+  Names names = 1;
+  string iso_code = 2;
+  uint64 geoname_id = 3;
+  bool is_in_european_union = 4;
+  string type = 5;
+}
+
+message Location {
+  google.protobuf.DoubleValue latitude = 1;
+  google.protobuf.DoubleValue longitude = 2;
+  string time_zone = 3;
+  uint32 metro_code = 4;
+  uint32 accuracy_radius = 5;
+}
+
+message CityPostal {
+  string code = 1;
+}
+
+message CitySubdivision {
+  Names names = 1;
+  string iso_code = 2;
+  uint64 geoname_id = 3;
+}
+
+message CityTraits {
+  bool is_anycast = 1;
+  string ip_address = 2;
+  string network = 3;
+}
+
+message CountryTraits {
+  bool is_anycast = 1;
+  string ip_address = 2;
+  string network = 3;
+}
+
+message EnterpriseCityRecord {
+  Names names = 1;
+  uint64 geoname_id = 2;
+  uint32 confidence = 3;
+}
+
+message EnterprisePostal {
+  string code = 1;
+  uint32 confidence = 2;
+}
+
+message EnterpriseSubdivision {
+  Names names = 1;
+  string iso_code = 2;
+  uint64 geoname_id = 3;
+  uint32 confidence = 4;
+}
+
+message EnterpriseCountryRecord {
+  Names names = 1;
+  string iso_code = 2;
+  uint64 geoname_id = 3;
+  uint32 confidence = 4;
+  bool is_in_european_union = 5;
+}
+
+message EnterpriseTraits {
+  string network = 1;
+  string ip_address = 2;
+  string autonomous_system_organization = 3;
+  string connection_type = 4;
+  string domain = 5;
+  string isp = 6;
+  string mobile_country_code = 7;
+  string mobile_network_code = 8;
+  string organization = 9;
+  string user_type = 10;
+  double static_ip_score = 11;
+  uint64 autonomous_system_number = 12;
+  bool is_anycast = 13;
+  bool is_legitimate_proxy = 14;
+}
+
+message Names {
+  string de = 1;
+  string en = 2;
+  string es = 3;
+  string fr = 4;
+  string ja = 5;
+  string pt_br = 6;
+  string ru = 7;
+  string zh_cn = 8;
+}

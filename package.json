@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "generate": "openapi-generator-cli generate -i /local/api/geoip/v1/service.swagger.json -g typescript-axios -o /local/website/src/api"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.25.0"
+  }
+}
